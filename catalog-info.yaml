@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: greeting
+  description: New and testy 
+  annotations:
+    argocd/app-selector: rht-gitops.com/janus-argocd=greeting
+    backstage.io/kubernetes-namespace: orchestrator-gitops
+    backstage.io/kubernetes-id: greeting-ci
+    janus-idp.io/tekton: greeting
+    github.com/project-slug: rhdh-orchestrator-test/jen
+    gitlab.com/project-slug: rhdh-orchestrator-test/jen
+spec:
+  type: workflow-project
+  system: system:default/janus-orchestrator
+  lifecycle: development
+  owner: user:guest
